@@ -8,7 +8,9 @@ $('document').ready(function() {
         $('.stats').html(row);
       });
   });
-    if ($("table#stats tbody tr").length > 0)
-    $(this).tablesorter({ sortList: [[0,0]]});
+  var tableLength = document.getElementById('stats').innerHTML;
+  console.log(tableLength);
+    if ($("#stats tr").length > 0)
+            $("#myTable").tablesorter({ sortList: [[0,0]]});
 	//   $("#myTable").tablesorter();
 });
