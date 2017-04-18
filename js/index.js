@@ -5,9 +5,7 @@ $('document').ready(function() {
         row = '';
 
     $.when(makeTables()).done(function(doIt) {
-        if ($('.stats tr').length > 0) {
             $("#myTable").tablesorter();
-        }
     });
 
     function makeTables() {
@@ -15,9 +13,12 @@ $('document').ready(function() {
             $.getJSON('https://api.r6stats.com/api/v1/players/' + gamertag + '?platform=xone', function(data) {
                 row += '<tr><td>' + data.player.username + '</td><td>' + data.player.stats.ranked.kd + '</td><td>' + ((data.player.stats.ranked.wins / (data.player.stats.ranked.wins + data.player.stats.ranked.losses)) * 100).toFixed(2) + '</td><td>' + data.player.stats.progression.level + '</td><td>' + data.player.stats.ranked.kills + '</td><td>' + data.player.stats.ranked.deaths + '</td><td>' + data.player.stats.ranked.wins + '</td><td>' + data.player.stats.ranked.losses + '</td></tr>';
                 $('.stats').html(row);
-                });
+                console.log((((index + 1) / gamertags.length) * 100) + '% Complete')
+            });
         });
     }
+
+    $("#myTable").tablesorter();
 });
 
     // $("#myTable").trigger("update");
