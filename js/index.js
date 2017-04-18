@@ -5,7 +5,9 @@ $('document').ready(function() {
         row = '';
 
     $.when(makeTables()).done(function(doIt) {
-        $("#myTable").tablesorter();
+        if ($('.stats tr').length > 0) {
+            $("#myTable").tablesorter();
+        }
     });
 
     function makeTables() {
