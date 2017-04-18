@@ -5,7 +5,7 @@ $('document').ready(function() {
         row = '';
 
     $.when(makeTables()).done(function(doIt) {
-        $("#myTable").tablesorter();
+        $("#myTable").tablesorter({ sortList: [[1,0]]});
     });
 
     function makeTables() {
