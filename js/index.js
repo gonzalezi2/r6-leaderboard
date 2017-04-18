@@ -1,7 +1,7 @@
 
 
 $('document').ready(function() {
-    var gamertags = ['JohnLocke15', 'Yemen3', 'StizNewton', 'TheDailyDriver', 'Monohloco', 'iCellyHard17'];
+    var gamertags = ['JohnLocke15', 'Yemen3', 'StizNewton', 'TheDailyDriver', 'Monohloco', 'iCellyHard17', 'nj patriot83'];
         row = '';
 
     $.when(makeTables()).done(function(doIt) {
