@@ -8,8 +8,8 @@ $('document').ready(function() {
         $('.stats').html(row);
       });
   });
-    console.log($(".stats tr").length);
-    if ($(".stats tr").length > 0)
+    console.log($("#myTable tbody tr").length);
+    if ($("#myTable tbody tr").length > 0)
             $("#myTable").tablesorter({ sortList: [[0,0]]});
 	//   $("#myTable").tablesorter();
 });
