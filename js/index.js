@@ -7,9 +7,11 @@ $('document').ready(function() {
         row += '<tr><td>' + data.player.username + '</td><td>' + data.player.stats.ranked.kd + '</td><td>' + data.player.stats.ranked.wlr + '</td><td>' + data.player.stats.progression.level + '</td><td>' + data.player.stats.ranked.kills + '</td><td>' + data.player.stats.ranked.deaths + '</td><td>' + data.player.stats.ranked.wins + '</td><td>' + data.player.stats.ranked.losses + '</td></tr>';
         $('.stats').html(row);
       });
-  });
     console.log($("#myTable tbody tr").length);
-    if ($("#myTable tbody tr").length > 0)
-            $("#myTable").tablesorter({ sortList: [[0,0]]});
-	//   $("#myTable").tablesorter();
+  });
+
 });
+console.log($("#myTable tbody tr").length);
+if ($("#myTable tbody tr").length > 0)
+        $("#myTable").tablesorter({ sortList: [[0,0]]});
+//   $("#myTable").tablesorter();
