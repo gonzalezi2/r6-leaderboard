@@ -8,5 +8,7 @@ $('document').ready(function() {
         $('.stats').html(row);
       });
   });
-	  $("#myTable").tablesorter();
+    if ($("table#stats tbody tr").length > 0)
+    $(this).tablesorter({ sortList: [[0,0]]});
+	//   $("#myTable").tablesorter();
 });
