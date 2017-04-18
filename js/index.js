@@ -5,15 +5,15 @@ $('document').ready(function() {
         row = '';
 
     $.when(makeTables()).done(function(doIt) {
-        $("#myTable").tablesorter({ sortList: [[1,0]]});
+        $("#myTable").tablesorter();
     });
 
     function makeTables() {
         return $.each(gamertags, function(index, gamertag) {
-        $.getJSON('https://api.r6stats.com/api/v1/players/' + gamertag + '?platform=xone', function(data) {
-            row += '<tr><td>' + data.player.username + '</td><td>' + data.player.stats.ranked.kd + '</td><td>' + data.player.stats.ranked.wlr + '</td><td>' + data.player.stats.progression.level + '</td><td>' + data.player.stats.ranked.kills + '</td><td>' + data.player.stats.ranked.deaths + '</td><td>' + data.player.stats.ranked.wins + '</td><td>' + data.player.stats.ranked.losses + '</td></tr>';
-            $('.stats').html(row);
-            });
+            $.getJSON('https://api.r6stats.com/api/v1/players/' + gamertag + '?platform=xone', function(data) {
+                row += '<tr><td>' + data.player.username + '</td><td>' + data.player.stats.ranked.kd + '</td><td>' + (data.player.stats.ranked.wins / (data.player.stats.ranked.wins + data.player.stats.ranked.losses)) + '</td><td>' + data.player.stats.progression.level + '</td><td>' + data.player.stats.ranked.kills + '</td><td>' + data.player.stats.ranked.deaths + '</td><td>' + data.player.stats.ranked.wins + '</td><td>' + data.player.stats.ranked.losses + '</td></tr>';
+                $('.stats').html(row);
+                });
         });
     }
 });
